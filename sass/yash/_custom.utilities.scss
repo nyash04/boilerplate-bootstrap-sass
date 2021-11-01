@@ -1,0 +1,180 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    "position": map-merge(
+      map-get($utilities, "position"),
+      (
+       responsive: true,
+      ),
+    ),
+    "z-index": (
+      property: z-index,
+      class: zindex,
+      values: (
+        n1: -1 
+      ),
+    ),
+    "shadow": map-merge(
+      map-get($utilities, "shadow"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "shadow"), "values"),
+          (inset: $box-shadow-inset),
+        ),
+      ),
+    ),
+    "font-weight": map-merge(
+      map-get($utilities, "font-weight"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "font-weight"), "values"),
+          (semibold: $font-weight-semibold),
+        ),
+      ),
+    ),
+    "line-height": map-merge(
+      map-get($utilities, "line-height"),
+      (
+        responsive: true,
+      ),
+    ),
+    "width": map-merge(
+      map-get($utilities, "width"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "width"), "values"),
+          (15px: 15px),
+        ),
+      ),
+    ),
+    "height": map-merge(
+      map-get($utilities, "height"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "height"), "values"),
+          (
+            6: 2.5rem,
+            8: 3.5rem,
+          ),
+        ),
+      ),
+    ),
+    "min-viewport-height": map-merge(
+      map-get($utilities, "min-viewport-height"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "min-viewport-height"), "values"),
+          (
+            auto: auto,
+            120: 120vh,
+            150: 150vh,
+          ),
+        ),
+      ),
+    ),
+    "rounded": map-merge(
+      map-get($utilities, "rounded"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "rounded"), "values"),
+          (
+            4: $border-radius-xl,
+            5: $border-radius-2xl
+          )
+        ),
+      ),
+    ),
+    "rounded-bottom": map-merge(
+      map-get($utilities, "rounded-bottom"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "rounded-bottom"), "values"),
+          (
+            4: $border-radius-xl,
+            5: $border-radius-2xl
+          )
+        ),
+      ),
+    ),
+    "rounded-bottom-left": (
+      property: border-bottom-left-radius,
+      responsive: true,
+      class: rounded-bottom-left,
+      values: (
+        5: $border-radius-2xl
+      )
+    ),
+    "rounded-bottom-right": (
+      property: border-bottom-right-radius,
+      responsive: true,
+      class: rounded-bottom-right,
+      values: (
+        0: 0
+      )
+    ),
+    "bg-opacity": map-merge(
+      map-get($utilities, "bg-opacity"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "bg-opacity"), "values"),
+          (
+            30: .3,
+          )
+        ),
+      ),
+    ),
+    "opacity": map-merge(
+      map-get($utilities, "opacity"),
+      (
+        class: o,
+        values: map-merge(
+          map-get(map-get($utilities, "opacity"), "values"),
+          (
+            20: .2,
+            60: .6,
+          )
+        ),
+      ),
+    ),
+    "min-width": (
+      property: min-width,
+      class: min-w,
+      values: (auto: auto)
+    ),
+    "layout-min-viewport-height": (
+      property: min-height,
+      class: lyt-min-vh,
+      values: (100: calc(100vh - 30px))
+    ),
+    "object-fit": (
+      property: object-fit,
+      class: of,
+      values: none,
+    ),
+    "object-position": (
+      property: object-position,
+      class: op,
+      values: top right bottom left,
+    ),
+    "cursor": (
+      property: cursor,
+      class: c,
+      values: auto pointer grab,
+    ),
+    "transform": (
+      property: transform,
+      values: none,
+    ),
+    "mix-blend-mode": (
+      property: mix-blend-mode,
+      class: mbm,
+      values: multiply,
+    ),
+  )
+);
