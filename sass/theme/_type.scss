@@ -125,7 +125,6 @@ h6, .h6 {
 // Lead
 
 .lead {
-
   @include media-breakpoint-down(lg) {
     font-size: $lead-font-size-md;
   }

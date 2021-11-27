@@ -17,53 +17,45 @@
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
   --bs-white: #fff;
-  --bs-gray: #8E8A88;
-  --bs-gray-dark: #999999;
-  --bs-gray-gray-100: #F3F3F3;
-  --bs-gray-gray-200: #E9E9E9;
-  --bs-gray-gray-300: #F2F2F2;
-  --bs-gray-gray-400: #B0E5D9;
-  --bs-gray-gray-500: #A098AE;
-  --bs-gray-gray-600: #8E8A88;
-  --bs-gray-gray-700: #10C2A5;
-  --bs-gray-gray-800: #999999;
-  --bs-gray-gray-900: #121212;
-  --bs-black: #000;
-  --bs-white: #fff;
-  --bs-primary: #00003E;
-  --bs-primary-desat: #6C8AEC;
-  --bs-secondary: #ED7948;
-  --bs-tertiary: #303972;
-  --bs-success: #CDC199;
-  --bs-info: #0098DA;
-  --bs-warning: #10E933;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
   --bs-danger: #dc3545;
-  --bs-light: #F3F3F3;
-  --bs-dark: #121212;
-  --bs-black-rgb: 0, 0, 0;
-  --bs-white-rgb: 255, 255, 255;
-  --bs-primary-rgb: 0, 0, 62;
-  --bs-primary-desat-rgb: 108, 138, 236;
-  --bs-secondary-rgb: 237, 121, 72;
-  --bs-tertiary-rgb: 48, 57, 114;
-  --bs-success-rgb: 205, 193, 153;
-  --bs-info-rgb: 0, 152, 218;
-  --bs-warning-rgb: 16, 233, 51;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-primary-rgb: 13, 110, 253;
+  --bs-secondary-rgb: 108, 117, 125;
+  --bs-success-rgb: 25, 135, 84;
+  --bs-info-rgb: 13, 202, 240;
+  --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
-  --bs-light-rgb: 243, 243, 243;
-  --bs-dark-rgb: 18, 18, 18;
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-body-color-rgb: 0, 0, 0;
+  --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: "Urbanist", sans-serif;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #000;
+  --bs-body-color: #212529;
   --bs-body-bg: #fff;
 }
 
@@ -72,6 +64,12 @@
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -101,33 +99,53 @@ hr:not([size]) {
 
 h6, h5, h4, h3, h2, h1 {
   margin-top: 0;
-  margin-bottom: 0;
-  font-weight: 400;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
   line-height: 1.2;
 }
 
 h1 {
-  font-size: 2.75rem;
+  font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2.5rem;
+  }
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: calc(1.325rem + 0.9vw);
+}
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 2rem;
+  }
 }
 
 h3 {
-  font-size: 1.875rem;
+  font-size: calc(1.3rem + 0.6vw);
+}
+@media (min-width: 1200px) {
+  h3 {
+    font-size: 1.75rem;
+  }
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: calc(1.275rem + 0.3vw);
+}
+@media (min-width: 1200px) {
+  h4 {
+    font-size: 1.5rem;
+  }
 }
 
 h5 {
-  font-size: 1.625rem;
+  font-size: 1.25rem;
 }
 
 h6 {
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 p {
@@ -213,12 +231,11 @@ sup {
 }
 
 a {
-  color: #00003E;
-  text-decoration: none;
+  color: #0d6efd;
+  text-decoration: underline;
 }
 a:hover {
-  color: #000032;
-  text-decoration: underline;
+  color: #0a58ca;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -262,8 +279,8 @@ kbd {
   padding: 0.2rem 0.4rem;
   font-size: 0.875em;
   color: #fff;
-  background-color: #121212;
-  border-radius: 0.25rem;
+  background-color: #212529;
+  border-radius: 0.2rem;
 }
 kbd kbd {
   padding: 0;
@@ -288,7 +305,7 @@ table {
 caption {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  color: #8E8A88;
+  color: #6c757d;
   text-align: left;
 }
 
@@ -385,8 +402,13 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+  font-size: calc(1.275rem + 0.3vw);
   line-height: inherit;
+}
+@media (min-width: 1200px) {
+  legend {
+    font-size: 1.5rem;
+  }
 }
 legend + * {
   clear: left;

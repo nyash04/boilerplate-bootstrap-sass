@@ -28,7 +28,10 @@ $utilities: map-merge(
       (
         values: map-merge(
           map-get(map-get($utilities, "font-weight"), "values"),
-          (semibold: $font-weight-semibold),
+          (
+            medium: $font-weight-medium,
+            semibold: $font-weight-semibold,
+          ),
         ),
       ),
     ),
@@ -44,7 +47,9 @@ $utilities: map-merge(
         responsive: true,
         values: map-merge(
           map-get(map-get($utilities, "width"), "values"),
-          (15px: 15px),
+          (
+            15px: 15px,
+          ),
         ),
       ),
     ),
@@ -55,8 +60,7 @@ $utilities: map-merge(
         values: map-merge(
           map-get(map-get($utilities, "height"), "values"),
           (
-            6: 2.5rem,
-            8: 3.5rem,
+            15px: 15px,
           ),
         ),
       ),
@@ -70,7 +74,6 @@ $utilities: map-merge(
           (
             auto: auto,
             120: 120vh,
-            150: 150vh,
           ),
         ),
       ),
@@ -111,12 +114,16 @@ $utilities: map-merge(
     "min-width": (
       property: min-width,
       class: min-w,
-      values: (auto: auto)
+      values: (
+        auto: auto,
+      )
     ),
     "layout-min-viewport-height": (
       property: min-height,
       class: lyt-min-vh,
-      values: (100: calc(100vh - 30px))
+      values: (
+        100: calc(100vh - 30px),
+      )
     ),
     "object-fit": (
       property: object-fit,
