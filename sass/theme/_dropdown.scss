@@ -59,16 +59,16 @@
 
 // Toggle
 
-.dropdown-toggle::after {
-  font-family: "Feather";
-  vertical-align: middle;
-  border: none !important;
-  content: "\e92e";
-}
+// .dropdown-toggle::after {
+//   font-family: "Feather";
+//   vertical-align: middle;
+//   border: none !important;
+//   content: "\e92e";
+// }
 
-.dropend > .dropdown-toggle::after {
-  content: "\e930";
-}
+// .dropend > .dropdown-toggle::after {
+//   content: "\e930";
+// }
 
 
 // Sizing
