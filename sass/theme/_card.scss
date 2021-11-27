@@ -41,6 +41,62 @@ a.card, a.card-body, a.card-footer, a.card-meta {
 }
 
 
+// Card sm
+
+.card-sm {
+  @include border-radius($card-border-radius-sm);
+  @include box-shadow($card-box-shadow-sm);
+
+  > .list-group {
+    &:first-child {
+      @include border-top-radius($card-inner-border-radius-sm);
+    }
+
+    &:last-child {
+      @include border-bottom-radius($card-inner-border-radius-sm);
+    }
+  }
+
+  .card-body {
+    padding: $card-spacer-y-sm $card-spacer-x-sm;
+  }
+
+  .card-header {
+    padding: $card-cap-padding-y-sm $card-cap-padding-x-sm;
+
+    &:first-child {
+      @include border-radius(
+        $card-inner-border-radius-sm $card-inner-border-radius-sm 0 0
+      );
+    }
+  }
+
+  .card-footer {
+    padding: $card-cap-padding-y-sm $card-cap-padding-x-sm;
+
+    &:last-child {
+      @include border-radius(
+        0 0 $card-inner-border-radius-sm $card-inner-border-radius-sm
+      );
+    }
+  }
+
+  .card-img-overlay {
+    @include border-radius($card-inner-border-radius-sm);
+  }
+
+  .card-img,
+  .card-img-top {
+    @include border-top-radius($card-inner-border-radius-sm);
+  }
+
+  .card-img,
+  .card-img-bottom {
+    @include border-bottom-radius($card-inner-border-radius-sm);
+  }
+}
+
+
 // Card flush
 
 .card-flush {

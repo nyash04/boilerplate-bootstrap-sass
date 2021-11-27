@@ -1,0 +1,9 @@
+// 
+// simplebar.scss
+// Plugin overrides
+// 
+
+[data-simplebar]::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

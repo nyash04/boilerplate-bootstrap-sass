@@ -3,7 +3,7 @@
 // Extended from Bootstrap
 //
 
-@mixin badge-variant-soft($color, $badge-soft-bg-opacity) {
+@mixin badge-soft-variant($color, $badge-soft-bg-opacity) {
   background-color: rgba($color, $badge-soft-bg-opacity);
   color: $color;
 

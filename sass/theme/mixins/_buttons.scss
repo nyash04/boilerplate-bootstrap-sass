@@ -3,7 +3,7 @@
 // Extended from Bootstrap
 //
 
-@mixin btn-variant-soft($bg, $color) {
+@mixin btn-soft-variant($bg, $color) {
   background-color: $bg;
   color: $color;
 
@@ -15,5 +15,23 @@
   &.active {
     background-color: fade-in($bg, .05);
     color: $color;
+  }
+}
+
+@mixin button-translucent-variant($background, $color: color-contrast($background)) {
+  color: $color;
+  background-color: $background;
+  border-color: transparent;
+
+  &:hover, &:focus {
+    color: $color;
+    background-color: rgba($background, 0.8);
+    border-color: transparent;
+  }
+
+  &.active {
+    color: $color;
+    background-color: rgba($background, 0.8);
+    border-color: transparent;
   }
 }

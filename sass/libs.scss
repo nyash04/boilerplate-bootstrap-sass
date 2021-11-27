@@ -1,4 +1,22 @@
-// @import '~aos/dist/aos.css';
-// @import '~flickity/dist/flickity.min.css';
-// @import '~flickity-fade/flickity-fade.css';
-// @import '~quill/dist/quill.core.css';
+// Bootstrap functions
+@import 'bootstrap/functions';
+
+// Theme functions
+@import 'theme/functions';
+
+// Theme variables
+@import 'theme/variables.bootstrap';
+@import "theme/variables";
+
+// Libs variables
+@import "libs/variables";
+
+// Libs
+@import "libs/bootstrap-icons";
+@import "libs/choices";
+@import "libs/dropzone";
+@import "libs/quill.snow";
+@import "libs/aos";
+@import "libs/flickity";
+@import "libs/flickity-fade";
+@import "libs/simplebar";

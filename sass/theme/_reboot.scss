@@ -2,7 +2,20 @@
 // reboot.scss
 // Extended from Bootstrap
 //
+:root {
+  @each $color, $value in $grays-rgb {
+    --#{$variable-prefix}#{$color}-rgb: #{$value};
+  }
+}
 
-html, body {
-  overflow-x: hidden;
+body {
+  letter-spacing: $ls-base;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  letter-spacing: inherit;
 }

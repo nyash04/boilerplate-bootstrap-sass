@@ -75,40 +75,6 @@ $utilities: map-merge(
         ),
       ),
     ),
-    "rounded": map-merge(
-      map-get($utilities, "rounded"),
-      (
-        responsive: true,
-        values: map-merge(
-          map-get(map-get($utilities, "rounded"), "values"),
-          (
-            4: $border-radius-xl,
-            5: $border-radius-2xl
-          )
-        ),
-      ),
-    ),
-    "rounded-bottom": map-merge(
-      map-get($utilities, "rounded-bottom"),
-      (
-        responsive: true,
-        values: map-merge(
-          map-get(map-get($utilities, "rounded-bottom"), "values"),
-          (
-            4: $border-radius-xl,
-            5: $border-radius-2xl
-          )
-        ),
-      ),
-    ),
-    "rounded-bottom-left": (
-      property: border-bottom-left-radius,
-      responsive: true,
-      class: rounded-bottom-left,
-      values: (
-        5: $border-radius-2xl
-      )
-    ),
     "rounded-bottom-right": (
       property: border-bottom-right-radius,
       responsive: true,

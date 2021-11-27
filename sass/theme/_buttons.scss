@@ -3,6 +3,14 @@
 // Extended from Bootstrap
 //
 
+.btn-base {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
 .btn > img {
   max-height: 1em;
   width: auto;
@@ -132,8 +140,14 @@
 // Soft variants
 
 @each $color, $value in $theme-colors {
-  .btn-#{$color}-soft {
-    @include btn-variant-soft(rgba($value, $btn-soft-bg-opacity), $value);
+  .btn-translucent-#{$color} {
+    @include button-translucent-variant($value);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-soft-#{$color} {
+    @include btn-soft-variant(rgba($value, $btn-soft-bg-opacity), $value);
   }
 }
 
@@ -142,6 +156,20 @@
 
 .btn-pill {
   border-radius: $border-radius-pill;
+}
+
+
+// Button icons
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: initial;
+  width: $btn-height;
+  padding: 0;
+  height: $btn-height;
+  border-radius: 50%;
 }
 
 
@@ -170,6 +198,6 @@
 }
 
 .btn-rounded-circle.btn-xs {
-  padding-left: $btn-padding-y-xs;
-  padding-right: $btn-padding-y-xs;
+  padding-left: $btn-padding-y-sm;
+  padding-right: $btn-padding-y-sm;
 }

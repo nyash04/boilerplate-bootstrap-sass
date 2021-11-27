@@ -87,12 +87,12 @@
 
 @each $color, $value in $theme-colors {
   .badge.bg-#{$color}-soft {
-    @include badge-variant-soft($value, $badge-soft-bg-opacity);
+    @include badge-soft-variant($value, $badge-soft-bg-opacity);
   }
 }
 
 .badge.bg-gray-700-soft {
-  @include badge-variant-soft($gray-700, $badge-soft-bg-opacity);
+  @include badge-soft-variant($gray-700, $badge-soft-bg-opacity);
 }
 
 

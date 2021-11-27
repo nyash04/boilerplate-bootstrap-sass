@@ -47,10 +47,6 @@
 
 // Brand
 
-.navbar-brand {
-  font-weight: $navbar-brand-font-weight;
-}
-
 .navbar-brand-img {
   max-height: $navbar-brand-height;
   width: auto;
@@ -78,7 +74,6 @@
 // Navigation
 
 .navbar-nav .nav-link {
-  font-weight: $navbar-nav-link-font-weight;
 
   &:hover, &:focus {
     outline: none;
@@ -144,16 +139,64 @@
 
 // Toggler
 
-.navbar .navbar-toggler {
-  margin-left: auto;
+.navbar-toggler {
+  position: relative;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.25rem;
+  color: $black;
+  border: 0;
+
+  .navbar-toggler-icon,
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    position: absolute;
+    display: block;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: $border-radius-pill;
+    transition: $transition-base;
+  }
+
+  .navbar-toggler-icon {
+    position: static;
+    width: 75%;
+    margin-left: auto;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 100%;
+    }
+
+    &::before {
+      top: 0;
+      right: 0;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &:not(.collapsed) {
+    .navbar-toggler-icon {
+      background-color: transparent;
+
+      &::before {
+        right: -10px;
+        transform: rotate(45deg) translateY(0.8125rem);
+      }
+      &::after {
+        right: -10px;
+        transform: rotate(-45deg) translateY(-0.8125rem);
+      }
+    }
+  }
 }
 
 .navbar-collapse .navbar-toggler {
-  position: absolute;
-  top: $spacer;
-  right: $spacer;
-  z-index: 1;
-
   @include media-breakpoint-up(lg) {
     display: none;
   }
@@ -165,7 +208,6 @@
 .navbar-collapse .navbar-nav .nav-item {
 
   @include media-breakpoint-down(lg) {
-    padding: $navbar-nav-item-spacing;
 
     + .nav-item {
       border-top: $border-width solid $gray-200;
@@ -243,7 +285,6 @@
 .navbar-collapse .navbar-nav .dropdown > .dropdown-toggle {
 
   @include media-breakpoint-down(lg) {
-    margin-bottom: $navbar-dropdown-toggle-margin-bottom;
     pointer-events: none;
   }
 }
