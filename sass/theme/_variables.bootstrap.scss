@@ -605,7 +605,7 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      'Urbanist', sans-serif;;
+$font-family-sans-serif:      'Roboto', sans-serif;;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$variable-prefix}font-sans-serif) !default;
@@ -635,12 +635,12 @@ $line-height-lg:              2 !default;
 
 $ls-base:                     initial; /// NEW
 
-$h1-font-size:                2.75rem;
-$h2-font-size:                2rem;
-$h3-font-size:                1.875rem;
-$h4-font-size:                1.5rem;
-$h5-font-size:                1.625rem;
-$h6-font-size:                1.125rem;
+$h1-font-size:                2.75rem; // 44px
+$h2-font-size:                2rem; // 32px
+$h3-font-size:                1.875rem; // 30px
+$h4-font-size:                1.5rem; // 24px
+$h5-font-size:                1.625rem; // 26px
+$h6-font-size:                1.125rem; // 18px
 
 /// NEW
 $headings-letter-spacing: -.01em;

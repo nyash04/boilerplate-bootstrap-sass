@@ -1,6 +1,36 @@
 $utilities: map-merge(
   $utilities,
   (
+    "opacity": map-merge(
+      map-get($utilities, "opacity"),
+      (
+        class: o,
+        values: map-merge(
+          map-get(map-get($utilities, "opacity"), "values"),
+          (
+            10: .1,
+            20: .2,
+            30: .3,
+            40: .4,
+            50: .5,
+            60: .6,
+            70: .7,
+            80: .8,
+            90: .9,
+            100: 1,
+          )
+        ),
+      ),
+    ),
+    "shadow": map-merge(
+      map-get($utilities, "shadow"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "shadow"), "values"),
+          (inset: $box-shadow-inset),
+        ),
+      ),
+    ),
     "position": map-merge(
       map-get($utilities, "position"),
       (
@@ -11,15 +41,145 @@ $utilities: map-merge(
       property: z-index,
       class: zindex,
       values: (
-        n1: -1 
+        n1: -1,
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 5,
       ),
     ),
-    "shadow": map-merge(
-      map-get($utilities, "shadow"),
+    "border": map-merge(
+      map-get($utilities, "border"),
+      (
+        responsive: true,
+      ),
+    ),
+    "border-top": map-merge(
+      map-get($utilities, "border-top"),
+      (
+        responsive: true,
+      ),
+    ),
+    "border-end": map-merge(
+      map-get($utilities, "border-end"),
+      (
+        responsive: true,
+      ),
+    ),
+    "border-bottom": map-merge(
+      map-get($utilities, "border-bottom"),
+      (
+        responsive: true,
+      ),
+    ),
+    "border-start": map-merge(
+      map-get($utilities, "border-start"),
+      (
+        responsive: true,
+      ),
+    ),
+    "width": map-merge(
+      map-get($utilities, "width"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "width"), "values"),
+          (
+            15px: 15px,
+          ),
+        ),
+      ),
+    ),
+    "min-width": (
+      property: min-width,
+      class: min-w,
+      responsive: true,
+      values: (
+        auto: auto,
+      )
+    ),
+    "max-width": map-merge(
+      map-get($utilities, "max-width"),
+      (
+       class: max-w,
+       responsive: true,
+      ),
+    ),
+    "viewport-width": map-merge(
+      map-get($utilities, "viewport-width"),
+      (
+       responsive: true,
+      ),
+    ),
+    "min-viewport-width": map-merge(
+      map-get($utilities, "min-viewport-width"),
+      (
+       responsive: true,
+      ),
+    ),
+    "layout-min-viewport-width": (
+      property: min-width,
+      class: lyt-min-vw,
+      responsive: true,
+      values: (
+        100: calc(100vw - 30px),
+      )
+    ),
+    "height": map-merge(
+      map-get($utilities, "height"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "height"), "values"),
+          (
+            15px: 15px,
+          ),
+        ),
+      ),
+    ),
+    "max-height": map-merge(
+      map-get($utilities, "max-height"),
+      (
+       class: max-h,
+       responsive: true,
+      ),
+    ),
+    "viewport-height": map-merge(
+      map-get($utilities, "viewport-height"),
+      (
+       responsive: true,
+      ),
+    ),
+    "min-viewport-height": map-merge(
+      map-get($utilities, "min-viewport-height"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "min-viewport-height"), "values"),
+          (
+            auto: auto,
+            120: 120vh,
+          ),
+        ),
+      ),
+    ),
+    "layout-min-viewport-height": (
+      property: min-height,
+      class: lyt-min-vh,
+      responsive: true,
+      values: (
+        100: calc(100vh - 30px),
+      )
+    ),
+    "font-family": map-merge(
+      map-get($utilities, "font-family"),
       (
         values: map-merge(
-          map-get(map-get($utilities, "shadow"), "values"),
-          (inset: $box-shadow-inset),
+          map-get(map-get($utilities, "font-family"), "values"),
+          (
+            
+          ),
         ),
       ),
     ),
@@ -41,99 +201,79 @@ $utilities: map-merge(
         responsive: true,
       ),
     ),
-    "width": map-merge(
-      map-get($utilities, "width"),
+    "text-opacity": map-merge(
+      map-get($utilities, "text-opacity"),
       (
-        responsive: true,
-        values: map-merge(
-          map-get(map-get($utilities, "width"), "values"),
-          (
-            15px: 15px,
-          ),
-        ),
+        values: (
+          10: .1,
+          20: .2,
+          30: .3,
+          40: .4,
+          50: .5,
+          60: .6,
+          70: .7,
+          80: .8,
+          90: .9,
+          100: 1,
+        )
       ),
-    ),
-    "height": map-merge(
-      map-get($utilities, "height"),
-      (
-        responsive: true,
-        values: map-merge(
-          map-get(map-get($utilities, "height"), "values"),
-          (
-            15px: 15px,
-          ),
-        ),
-      ),
-    ),
-    "min-viewport-height": map-merge(
-      map-get($utilities, "min-viewport-height"),
-      (
-        responsive: true,
-        values: map-merge(
-          map-get(map-get($utilities, "min-viewport-height"), "values"),
-          (
-            auto: auto,
-            120: 120vh,
-          ),
-        ),
-      ),
-    ),
-    "rounded-bottom-right": (
-      property: border-bottom-right-radius,
-      responsive: true,
-      class: rounded-bottom-right,
-      values: (
-        0: 0
-      )
     ),
     "bg-opacity": map-merge(
       map-get($utilities, "bg-opacity"),
       (
-        responsive: true,
-        values: map-merge(
-          map-get(map-get($utilities, "bg-opacity"), "values"),
-          (
-            30: .3,
-          )
-        ),
+        values: (
+          10: .1,
+          20: .2,
+          30: .3,
+          40: .4,
+          50: .5,
+          60: .6,
+          70: .7,
+          80: .8,
+          90: .9,
+          100: 1,
+        )
       ),
     ),
-    "opacity": map-merge(
-      map-get($utilities, "opacity"),
+    "rounded": map-merge(
+      map-get($utilities, "rounded"),
       (
-        class: o,
-        values: map-merge(
-          map-get(map-get($utilities, "opacity"), "values"),
-          (
-            20: .2,
-            60: .6,
-          )
-        ),
+        responsive: true
       ),
     ),
-    "min-width": (
-      property: min-width,
-      class: min-w,
-      values: (
-        auto: auto,
-      )
+    "rounded-top": map-merge(
+      map-get($utilities, "rounded-top"),
+      (
+        responsive: true
+      ),
     ),
-    "layout-min-viewport-height": (
-      property: min-height,
-      class: lyt-min-vh,
-      values: (
-        100: calc(100vh - 30px),
-      )
+    "rounded-end": map-merge(
+      map-get($utilities, "rounded-end"),
+      (
+        responsive: true
+      ),
+    ),
+    "rounded-bottom": map-merge(
+      map-get($utilities, "rounded-bottom"),
+      (
+        responsive: true
+      ),
+    ),
+    "rounded-start": map-merge(
+      map-get($utilities, "rounded-start"),
+      (
+        responsive: true
+      ),
     ),
     "object-fit": (
       property: object-fit,
       class: of,
-      values: none,
+      values: none cover contain scale-down,
     ),
     "object-position": (
       property: object-position,
       class: op,
-      values: top right bottom left,
+      values: top right center bottom left,
     ),
     "cursor": (
       property: cursor,
